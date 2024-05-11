@@ -15,14 +15,20 @@ const delimiter = "."
 let numbers = {
     1: "1",
     2: "1",
-    3: "1"
+    3: "0"
 }
 
+let iteration = 1;
 while (true){
+
     
     numbers[3] = A.addArrays(A.convertNumberStringToArray(numbers[1],delimiter),A.convertNumberStringToArray(numbers[2],delimiter));
     numbers[2] = numbers[1];
     numbers[1] = numbers[3];
-    console.log( "Fibonacci: " + A.removeLeadingNumbersFromString(A.convertNumbersArrayToString(numbers[3] )))
+
+    console.log("Fibonacci: " + A.removeLeadingZerosFromString(A.convertNumbersArrayToString(numbers[3] )))
+    console.log("Iteration: " + iteration)
+    
+    iteration ++;
 }
 

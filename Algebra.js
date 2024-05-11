@@ -52,7 +52,7 @@ class Algebra {
     }
   }
 
-  removeLeadingNumbersFromString(number) {
+  removeLeadingZerosFromString(number) {
     return number.replace(/^0+/, "");
   }
 
@@ -70,6 +70,14 @@ class Algebra {
     }
   }
 
+  compareAndReturnGreater(a, b) {
+    if (a > b) {
+        return a;
+    } else {
+        return b;
+    }
+}
+
   addArrays(num1, num2, delimiter) {
     let result;
     let n1 = this.roundArray(num1, delimiter).reverse();
@@ -79,9 +87,11 @@ class Algebra {
     // console.log(n1);
     // console.log(n2);
 
-    let resLen = n1.length + n2.length;
+    let resLen = this.compareAndReturnGreater(n1.length, n2.length)+5;
+    
+    let res = Array(resLen);
 
-    let res = Array(resLen + 1);
+  
 
     let rest = 0;
 
@@ -97,9 +107,10 @@ class Algebra {
       } else {
         result = sum;
       }
-      // console.log("Round: " + index + ", Result: " + result + " Rest: " + rest);
+      //  console.log("Round: " + index + ", Result: " + result + " Rest: " + rest + " ArrayLenght: " + resLen);
       res.push(result);
     }
+    
 
     return res.reverse();
   }
