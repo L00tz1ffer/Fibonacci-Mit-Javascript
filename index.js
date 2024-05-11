@@ -13,9 +13,9 @@ const delimiter = "."
 // console.log(A.removeLeadingNumbersFromString(A.convertNumbersArrayToString(value)))
 
 let numbers = {
-    1: "1",
+    1: "0",
     2: "1",
-    3: "0"
+    3: "1"
 }
 
 let iteration = 1;
@@ -26,8 +26,7 @@ while (true){
     numbers[2] = numbers[1];
     numbers[1] = numbers[3];
 
-    console.log("Fibonacci: " + A.removeLeadingZerosFromString(A.convertNumbersArrayToString(numbers[3] )))
-    console.log("Iteration: " + iteration)
+    console.log("Iteration: " + iteration + " Fibonacci: " + A.removeLeadingZerosFromString(A.convertNumbersArrayToString(numbers[3] )))
     
     iteration ++;
 }
