@@ -1,5 +1,7 @@
 # what happend here?
 
+## What i was wondering?
+
 I was wondering, how far i could take fibonacci with Javascript.
 This led to the finding, that ```Javascript``` is very limited in the maximal size of an Integer,
 so i tried to virtualize a huge number by subdeviding it to smaller portions.
@@ -9,6 +11,8 @@ First i parsed a numerical value to a ```string``` if necessary, after that i tr
 now i serially parse the reversed arrays by adding them together and reversing it again
 
 the finding at the end is, that this way of trying to calculate the next fibonacci number it blew up the vm heap after 35 findings
+
+## Result
 
 ```ps1
 > node index.js
@@ -48,3 +52,7 @@ Fibonacci: 4079288
 Fibonacci: 6800408
 Fibonacci: 10879690
 ```
+
+## Assumption
+
+It would be interesting, if i could find a way, to optimize this using Javascript
