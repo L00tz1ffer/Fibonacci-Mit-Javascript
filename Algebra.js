@@ -70,13 +70,20 @@ class Algebra {
     }
   }
 
+  compareAndReturnSmaller(a, b) {
+    if (a < b) {
+      return a;
+    } else {
+      return b;
+    }
+  }
   compareAndReturnGreater(a, b) {
     if (a > b) {
-        return a;
+      return a;
     } else {
-        return b;
+      return b;
     }
-}
+  }
 
   addArrays(num1, num2, delimiter) {
     let result;
@@ -87,11 +94,9 @@ class Algebra {
     // console.log(n1);
     // console.log(n2);
 
-    let resLen = this.compareAndReturnGreater(n1.length, n2.length)+5;
-    
-    let res = Array(resLen);
+    let resLen = this.compareAndReturnGreater(n1.length, n2.length) + 5;
 
-  
+    let res = [];
 
     let rest = 0;
 
@@ -110,14 +115,11 @@ class Algebra {
       //  console.log("Round: " + index + ", Result: " + result + " Rest: " + rest + " ArrayLenght: " + resLen);
       res.push(result);
     }
-    
 
     return res.reverse();
   }
 
-  subtractArrays () {
-    
-  }
+  subtractArrays() {}
 }
 
 export default Algebra;

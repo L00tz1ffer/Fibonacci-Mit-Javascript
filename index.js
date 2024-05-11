@@ -1,4 +1,5 @@
 import Algebra from "./Algebra.js";
+import { countChars } from "./util.js";
 
 const A = new Algebra();
 const delimiter = "."
@@ -11,6 +12,8 @@ const delimiter = "."
 
 // console.log(A.removeLeadingNumbersFromString(A.convertNumbersArrayToString(A.addArrays(value, value, delimiter))))
 // console.log(A.removeLeadingNumbersFromString(A.convertNumbersArrayToString(value)))
+
+
 
 let numbers = {
     1: "0",
@@ -26,8 +29,17 @@ while (true){
     numbers[2] = numbers[1];
     numbers[1] = numbers[3];
 
-    console.log("Iteration: " + iteration + " Fibonacci: " + A.removeLeadingZerosFromString(A.convertNumbersArrayToString(numbers[3] )))
+    let output =  A.removeLeadingZerosFromString(A.convertNumbersArrayToString(numbers[3] ))
+    console.clear()
+    console.log("Iteration: " + iteration + " Output Lenght: " + countChars(output) + " Fibonacci: " + output)
     
+    let newIterationSave = {
+        "Iteration": iteration,
+        "outputLentght": countChars(output),
+        "FibonacciNumber": output,
+
+    }
+
     iteration ++;
 }
 
