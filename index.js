@@ -14,6 +14,8 @@ const delimiter = "."
 // console.log(A.removeLeadingNumbersFromString(A.convertNumbersArrayToString(value)))
 
 
+const startTime =Date.now()
+
 
 let numbers = {
     1: "0",
@@ -21,6 +23,7 @@ let numbers = {
     3: "1"
 }
 
+let lastRun = 0;
 let iteration = 1;
 while (true){
 
@@ -31,15 +34,21 @@ while (true){
 
     let output =  A.removeLeadingZerosFromString(A.convertNumbersArrayToString(numbers[3] ))
     console.clear()
-    console.log("Iteration: " + iteration + " Output Lenght: " + countChars(output) + " Fibonacci: " + output)
+
+    const roundFinishTime = Date.now()
+    const timeRunning = roundFinishTime - startTime;
+    const roundTime = roundFinishTime - lastRun;
+    console.log("This calculation Took " + roundTime + " ms" + "\n" + "Running since: " + timeRunning + "\n" + "Iteration: " + iteration + "\n" + "Output Lenght: " + countChars(output) + "\n" + "Fibonacci: " + output)
     
     let newIterationSave = {
         "Iteration": iteration,
         "outputLentght": countChars(output),
-        "FibonacciNumber": output,
-
+        "FibonacciNumber": output,,
+        "timeElapsedSinceLastCalculation": roundTime,
+        "totalTimeElapsed": timeRunning,
     }
 
+    lastRun = roundFinishTime;
     iteration ++;
 }
 
