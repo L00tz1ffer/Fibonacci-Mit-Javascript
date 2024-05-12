@@ -1,5 +1,5 @@
-import Algebra from "./Algebra.js";
-import { countChars } from "./util.js";
+import Algebra from "./modules/Algebra.js";
+import { countChars } from "./util/util.js";
 
 const A = new Algebra();
 const delimiter = "."
@@ -43,7 +43,7 @@ while (true){
     let newIterationSave = {
         "Iteration": iteration,
         "outputLentght": countChars(output),
-        "FibonacciNumber": output,,
+        "FibonacciNumber": output,
         "timeElapsedSinceLastCalculation": roundTime,
         "totalTimeElapsed": timeRunning,
     }
